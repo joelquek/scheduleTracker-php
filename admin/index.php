@@ -111,6 +111,15 @@
 
         }
 
+        function deletePersonFromDB(){
+            //Permanently deletes a person's info from the DB
+            $person_id = $_POST['person_id_edit'];
+            $sql_query = "DELETE FROM MyTeam
+                          WHERE id = '".$person_id."';";
+            $db = new SQLite3('mydb.sq3');
+            $db->query($sql_query);
+        }
+
     ?>
 
 </body>
