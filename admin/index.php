@@ -50,6 +50,8 @@
 
     
     <?php
+        checkDBforTable();
+
         if(isset($_POST['addPerson'])){
             addPersonToDB();
             addPersonSchedule();
@@ -58,6 +60,11 @@
             deletePersonSchedule();
         }else if(isset($_POST['editPerson'])){
             editPersonFromDB();
+        }
+
+        function checkDBforTable(){
+            //check if table exists in DB
+            //otherwise create table
         }
 
         function addPersonToDB(){
@@ -119,6 +126,34 @@
             $db = new SQLite3('mydb.sq3');
             $db->query($sql_query);
         }
+
+        function deletePersonSchedule(){
+            //Permanently deletes a person's schedule from the DB
+            $person_id = $_POST['person_id_edit'];
+            $sql_query = "DELETE FROM MyTeamSchedule
+                          WHERE id = '".$person_id."';";
+            $db = new SQLite3('mydb.sq3');
+            $db->query($sql_query);
+        }
+
+        function editPersonFromDB(){
+            //Edit person's info
+            $person_id = $_POST['person_id_edit'];
+            $person_section = $_POST['person_section_edit'];
+            $person_role = $_POST['person_role_edit'];
+            $person_rank = $_POST['person_rank_edit'];
+            $sql_query = "UPDATE MyTeam
+                            SET 
+                            section = ".$person_section.",
+                            role = ".$person_role.",
+                            rank = ".$person_rank."
+                            WHERE 
+                            id='".$person_id."';";
+            $db = new SQLite3('mydb.sq3');
+            $db->query($sql_query);
+        }
+
+        
 
     ?>
 
