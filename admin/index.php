@@ -65,6 +65,27 @@
         function checkDBforTable(){
             //check if table exists in DB
             //otherwise create table
+            $db = new SQLite3('mydb.sq3');
+            $sql_query = "CREATE TABLE IF NOT EXISTS MyTeam 
+                        (name TEXT, 
+                        id TEXT, 
+                        section INTEGER,
+                        role INTEGER,
+                        rank INTEGER
+                        );";
+            $sql_query .= "CREATE TABLE IF NOT EXISTS MyTeamSchedule 
+                            (id TEXT, 
+                            year TEXT,
+                            week INTEGER,
+                            status_mon INTEGER,
+                            status_tue INTEGER,
+                            status_wed INTEGER,
+                            status_thu INTEGER,
+                            status_fri INTEGER,
+                            status_sat INTEGER,
+                            status_sun INTEGER
+                            );"; 
+            $db -> query($sql_query);
         }
 
         function addPersonToDB(){
