@@ -174,6 +174,20 @@
             $db->query($sql_query);
         }
 
+        function showTable(){
+            $db = new SQLite3("mydb.sq3");
+            $sql_query = "SELECT *
+                            FROM
+                                MyTeam
+                            ORDER BY
+                                section ASC,
+                                role ASC,
+                                rank ASC,
+                                id ASC";
+            $result = $db ->query($sql_query);
+
+        }
+
         
 
     ?>
