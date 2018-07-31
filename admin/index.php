@@ -206,29 +206,29 @@
                     echo "<td>".$row['id']."</td>";
                     echo "<td>
                             <select class='editPerson' name='person_section_edit'>
-                                <option value='1' ".$row['section']=='1'? "selected='selected'":"").">Section 1</option>
-                                <option value='2' ".$row['section']=='2'? "selected='selected'":"").">Section 2</option>
-                                <option value='3' ".$row['section']=='3'? "selected='selected'":"").">Section 3</option>
-                                <option value='4' ".$row['section']=='4'? "selected='selected'":"").">Section 4</option>
+                                <option value='1' ".($row['section']=='1'? "selected='selected'":"").">Section 1</option>
+                                <option value='2' ".($row['section']=='2'? "selected='selected'":"").">Section 2</option>
+                                <option value='3' ".($row['section']=='3'? "selected='selected'":"").">Section 3</option>
+                                <option value='4' ".($row['section']=='4'? "selected='selected'":"").">Section 4</option>
                             </select>
                           </td>";
 
                     echo "<td>
                           <select class='editPerson' name='person_role_edit'>
-                              <option value='1' ".$row['role']=='1'? "selected='selected'":"").">Role 1</option>
-                              <option value='2' ".$row['role']=='2'? "selected='selected'":"").">Role 2</option>
-                              <option value='3' ".$row['role']=='3'? "selected='selected'":"").">Role 3</option>
-                              <option value='4' ".$row['role']=='4'? "selected='selected'":"").">Role 4</option>
-                              <option value='5' ".$row['role']=='5'? "selected='selected'":"").">Role 5</option>
+                              <option value='1' ".($row['role']=='1'? "selected='selected'":"").">Role 1</option>
+                              <option value='2' ".($row['role']=='2'? "selected='selected'":"").">Role 2</option>
+                              <option value='3' ".($row['role']=='3'? "selected='selected'":"").">Role 3</option>
+                              <option value='4' ".($row['role']=='4'? "selected='selected'":"").">Role 4</option>
+                              <option value='5' ".($row['role']=='5'? "selected='selected'":"").">Role 5</option>
                           </select>
                         </td>";
 
                     echo "<td>
                         <select class='editPerson' name='person_rank_edit'>
-                            <option value='1' ".$row['rank']=='1'? "selected='selected'":"").">Rank 1</option>
-                            <option value='2' ".$row['rank']=='2'? "selected='selected'":"").">Rank 2</option>
-                            <option value='3' ".$row['rank']=='3'? "selected='selected'":"").">Rank 3</option>
-                            <option value='4' ".$row['rank']=='4'? "selected='selected'":"").">Rank 4</option>
+                            <option value='1' ".($row['rank']=='1'? "selected='selected'":"").">Rank 1</option>
+                            <option value='2' ".($row['rank']=='2'? "selected='selected'":"").">Rank 2</option>
+                            <option value='3' ".($row['rank']=='3'? "selected='selected'":"").">Rank 3</option>
+                            <option value='4' ".($row['rank']=='4'? "selected='selected'":"").">Rank 4</option>
                         </select>
                       </td>";
 
