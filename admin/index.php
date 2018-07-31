@@ -197,10 +197,54 @@
                     <th>Modify</th>";
             echo "</tr>";
 
+            //Table Body
+            echo "<tbody>";
+                while($row = $result->fetchArray(SQLITE3_ASSOC)){
+                    echo "<tr>";
+                    echo "<form method ='post' action=".htmlentities($_SERVER['PHP_SELF']).">";
+                    echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>
+                            <select class='editPerson' name='person_section_edit'>
+                                <option value='1' ".$row['section']=='1'? "selected='selected'":"").">Section 1</option>
+                                <option value='2' ".$row['section']=='2'? "selected='selected'":"").">Section 2</option>
+                                <option value='3' ".$row['section']=='3'? "selected='selected'":"").">Section 3</option>
+                                <option value='4' ".$row['section']=='4'? "selected='selected'":"").">Section 4</option>
+                            </select>
+                          </td>";
+
+                    echo "<td>
+                          <select class='editPerson' name='person_role_edit'>
+                              <option value='1' ".$row['role']=='1'? "selected='selected'":"").">Role 1</option>
+                              <option value='2' ".$row['role']=='2'? "selected='selected'":"").">Role 2</option>
+                              <option value='3' ".$row['role']=='3'? "selected='selected'":"").">Role 3</option>
+                              <option value='4' ".$row['role']=='4'? "selected='selected'":"").">Role 4</option>
+                              <option value='5' ".$row['role']=='5'? "selected='selected'":"").">Role 5</option>
+                          </select>
+                        </td>";
+
+                    echo "<td>
+                        <select class='editPerson' name='person_rank_edit'>
+                            <option value='1' ".$row['rank']=='1'? "selected='selected'":"").">Rank 1</option>
+                            <option value='2' ".$row['rank']=='2'? "selected='selected'":"").">Rank 2</option>
+                            <option value='3' ".$row['rank']=='3'? "selected='selected'":"").">Rank 3</option>
+                            <option value='4' ".$row['rank']=='4'? "selected='selected'":"").">Rank 4</option>
+                        </select>
+                      </td>";
+
+                      echo "<td>";
+                      echo "<input type='submit' value='Edit' name='editPerson'>";
+                      echo "<input type='submit' value='Delete' name='deletePerson' onclick=\"return confirm('Are you sure?');\">";
+                      echo "<input type='hidden' value='".$row['id']."' name='person_id_edit'>";
+                      echo "</td>";
+                      echo "</form>";
+                      echo "</tr>";
+                }
+                echo "</tbody>";
+                echo "</table>";
+                unset($db);
         }
-
-        
-
+        showTable();
     ?>
 
 </body>
