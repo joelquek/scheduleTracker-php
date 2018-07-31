@@ -48,5 +48,18 @@
         </div>
     </div>
 
+    
+    <?php
+        if(isset($_POST['addPerson'])){
+            addPersonToDB();
+            addPersonSchedule();
+        }else if(isset($_POST['deletePerson'])){
+            deletePersonFromDB();
+            deletePersonSchedule();
+        }else if(isset($_POST['editPerson'])){
+            editPersonFromDB();
+        }
+    ?>
+
 </body>
 </html>
