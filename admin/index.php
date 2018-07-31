@@ -59,6 +59,24 @@
         }else if(isset($_POST['editPerson'])){
             editPersonFromDB();
         }
+
+        function addPersonToDB(){
+            $person_name = $_POST['person_name'];
+            $person_id = $_POST['person_id'];
+            $person_section = $_POST['person_section'];
+            $person_role = $_POST['person_role'];
+            $person_rank = $_POST['person_rank'];
+            $sql_query =    "INSERT INTO MyTeam
+                            VALUES(
+                            '".trim($person_name)."',
+                            '".trim($person_id)."',
+                            '".$person_section."',
+                            '".$person_role."',
+                            '".$person_rank."');";
+            $db = new SQLite3('mydb.sq3');
+            $db -> query($sql_query);
+        }
+
     ?>
 
 </body>
