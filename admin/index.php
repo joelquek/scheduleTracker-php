@@ -186,6 +186,17 @@
                                 id ASC";
             $result = $db ->query($sql_query);
 
+            //Table Header
+            echo "<table>";
+            echo "<tr>";
+            echo "  <th>Name</th>
+                    <th>ID</th>
+                    <th>Section</th>
+                    <th>Role</th>
+                    <th>Rank</th>
+                    <th>Modify</th>";
+            echo "</tr>";
+
         }
 
         
