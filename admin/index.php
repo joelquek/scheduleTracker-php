@@ -77,6 +77,39 @@
             $db -> query($sql_query);
         }
 
+        function addPersonSchedule(){
+            //initialize schedule of added person
+            $db=new SQLite3('mydb.sq3');
+            $person_id = $_POST['person_id'];
+            $sql_query = "";
+            for($week =1; $week<=52; $week++){
+                $sql_query =  "INSERT INTO MyTeamSchedule
+                                (id, 
+                                year, 
+                                week, 
+                                status_mon, 
+                                status_tue, 
+                                status_wed,
+                                status_thu,
+                                status_fri,
+                                status_sat,
+                                status_sun)
+                                VALUES
+                                ('".trim($person_id)."',
+                                '".date("Y")."',
+                                ".$week.",
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0);";
+                $db->query($sql_query);
+            }
+
+        }
+
     ?>
 
 </body>
