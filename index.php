@@ -29,7 +29,7 @@
         <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>">
         <span>
             <input type="submit" name="lastWeek" id="week-shortcut" value="Last Week"/>
-        </span>s
+        </span>
         <span>
             <select name="select_week" id="week_select">
                 <?php 
