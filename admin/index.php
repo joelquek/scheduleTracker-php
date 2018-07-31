@@ -61,6 +61,7 @@
         }
 
         function addPersonToDB(){
+            //add new person's info into database
             $person_name = $_POST['person_name'];
             $person_id = $_POST['person_id'];
             $person_section = $_POST['person_section'];
